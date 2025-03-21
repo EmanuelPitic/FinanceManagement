@@ -12,6 +12,6 @@ CREATE TABLE expenses (
     category VARCHAR(20) NOT NULL CHECK (category IN ('maintenance', 'food', 'fun', 'school', 'personal')),
     amount DECIMAL(10,2) NOT NULL,
     description TEXT,
-    expense_date DATE NOT NULL,
+    expense_date timestamp NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
