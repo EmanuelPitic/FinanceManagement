@@ -1,0 +1,27 @@
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="auth-form">
+    <h2 class="mb-4">Înregistrează-te</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Nume utilizator</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Parolă</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Prenume</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Nume de familie</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Înregistrează-te</button>
+    </form>
+    <p class="mt-3 text-center">Ai deja un cont? <a href="{{ url_for('login') }}">Autentifică-te</a></p>
+</div>
+{% endblock %}

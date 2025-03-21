@@ -1,0 +1,34 @@
+<!-- templates/add_expense.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4">Adaugă o Factură Nouă</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="amount" class="form-label">Sumă</label>
+                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descriere</label>
+                <input type="text" class="form-control" id="description" name="description" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categorie</label>
+                <select class="form-select" id="category" name="category" >
+                    <option value="">Selectează o categorie</option>
+                    <option value="food">Mâncare</option>
+                    <option value="maintenance">Întreținere</option>
+                    <option value="fun">Distracție</option>
+                    <option value="school">Școală</option>
+                    <option value="personal">Personal</option>
+                </select>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Adaugă Cheltuiala</button>
+                <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">Anulează</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
