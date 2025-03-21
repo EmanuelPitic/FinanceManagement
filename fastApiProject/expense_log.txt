@@ -1,0 +1,270 @@
+2025-03-21 10:42:52,721 -  * Debugger is active!
+2025-03-21 10:42:52,724 -  * Debugger PIN: 806-635-475
+2025-03-21 10:43:02,412 - 127.0.0.1 - - [21/Mar/2025 10:43:02] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-21 10:43:02,483 - 127.0.0.1 - - [21/Mar/2025 10:43:02] "GET / HTTP/1.1" 200 -
+2025-03-21 10:43:04,070 - 127.0.0.1 - - [21/Mar/2025 10:43:04] "GET /login HTTP/1.1" 200 -
+2025-03-21 10:43:10,341 - 127.0.0.1 - - [21/Mar/2025 10:43:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+
+Expenses received: [{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+2025-03-21 10:43:10,648 - 127.0.0.1 - - [21/Mar/2025 10:43:10] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:44:21,566 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:44:22,132 -  * Debugger is active!
+2025-03-21 10:44:22,136 -  * Debugger PIN: 806-635-475
+
+Raw Expenses Received:
+[{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2023-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2023: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T08:29:37.000+00:00
+Formatted Date: 21 MAR 2025: 08 29
+Raw Date: 2025-03-21T08:33:29.000+00:00
+Formatted Date: 21 MAR 2025: 08 33
+Raw Date: 2025-03-21T08:34:16.000+00:00
+Formatted Date: 21 MAR 2025: 08 34
+Raw Date: 2025-03-21T08:39:51.000+00:00
+Formatted Date: 21 MAR 2025: 08 39
+2025-03-21 10:44:24,821 - 127.0.0.1 - - [21/Mar/2025 10:44:24] "GET /dashboard HTTP/1.1" 200 -
+
+Raw Expenses Received:
+[{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2023-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2023: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T08:29:37.000+00:00
+Formatted Date: 21 MAR 2025: 08 29
+Raw Date: 2025-03-21T08:33:29.000+00:00
+Formatted Date: 21 MAR 2025: 08 33
+Raw Date: 2025-03-21T08:34:16.000+00:00
+Formatted Date: 21 MAR 2025: 08 34
+Raw Date: 2025-03-21T08:39:51.000+00:00
+Formatted Date: 21 MAR 2025: 08 39
+2025-03-21 10:44:26,057 - 127.0.0.1 - - [21/Mar/2025 10:44:26] "GET /dashboard HTTP/1.1" 200 -
+
+Raw Expenses Received:
+[{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2023-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2023: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T08:29:37.000+00:00
+Formatted Date: 21 MAR 2025: 08 29
+Raw Date: 2025-03-21T08:33:29.000+00:00
+Formatted Date: 21 MAR 2025: 08 33
+Raw Date: 2025-03-21T08:34:16.000+00:00
+Formatted Date: 21 MAR 2025: 08 34
+Raw Date: 2025-03-21T08:39:51.000+00:00
+Formatted Date: 21 MAR 2025: 08 39
+2025-03-21 10:44:47,689 - 127.0.0.1 - - [21/Mar/2025 10:44:47] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:45:37,906 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:46:20,262 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-03-21 10:46:20,263 - [33mPress CTRL+C to quit[0m
+2025-03-21 10:46:20,263 -  * Restarting with stat
+2025-03-21 10:46:20,756 -  * Debugger is active!
+2025-03-21 10:46:20,760 -  * Debugger PIN: 806-635-475
+
+Raw Expenses Received:
+[{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2023-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2023: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T08:29:37.000+00:00
+Formatted Date: 21 MAR 2025: 08 29
+Raw Date: 2025-03-21T08:33:29.000+00:00
+Formatted Date: 21 MAR 2025: 08 33
+Raw Date: 2025-03-21T08:34:16.000+00:00
+Formatted Date: 21 MAR 2025: 08 34
+Raw Date: 2025-03-21T08:39:51.000+00:00
+Formatted Date: 21 MAR 2025: 08 39
+2025-03-21 10:46:22,358 - 127.0.0.1 - - [21/Mar/2025 10:46:22] "GET /dashboard HTTP/1.1" 200 -
+
+Raw Expenses Received:
+[{'id': 2, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mare', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 5, 'userId': 1, 'category': 'food', 'amount': 30.0, 'description': 'un sac de potata', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 16, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'un sac de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 17, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2025-03-21T22:00:00.000+00:00'}, {'id': 18, 'userId': 1, 'category': 'food', 'amount': 100.0, 'description': 'test cu saci de potata, mic', 'expenseDate': '2023-03-21T22:00:00.000+00:00'}, {'id': 19, 'userId': 1, 'category': 'maintenance', 'amount': 123.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 20, 'userId': 1, 'category': 'maintenance', 'amount': 1234.0, 'description': 'alcool', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 21, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': '-', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 22, 'userId': 1, 'category': 'personal', 'amount': 111.0, 'description': 'tsettttttttttt', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 23, 'userId': 1, 'category': 'food', 'amount': 2.0, 'description': 'asd', 'expenseDate': '2025-03-21T08:29:37.000+00:00'}, {'id': 24, 'userId': 1, 'category': 'fun', 'amount': 123.0, 'description': '-', 'expenseDate': '2025-03-21T08:33:29.000+00:00'}, {'id': 25, 'userId': 1, 'category': 'school', 'amount': 2.0, 'description': 'patru saci de cartofi', 'expenseDate': '2025-03-21T08:34:16.000+00:00'}, {'id': 26, 'userId': 1, 'category': 'fun', 'amount': 1.0, 'description': 'e', 'expenseDate': '2025-03-21T08:39:51.000+00:00'}]
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2025-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2025: 22 00
+Raw Date: 2023-03-21T22:00:00.000+00:00
+Formatted Date: 21 MAR 2023: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-20T22:00:00.000+00:00
+Formatted Date: 20 MAR 2025: 22 00
+Raw Date: 2025-03-21T08:29:37.000+00:00
+Formatted Date: 21 MAR 2025: 08 29
+Raw Date: 2025-03-21T08:33:29.000+00:00
+Formatted Date: 21 MAR 2025: 08 33
+Raw Date: 2025-03-21T08:34:16.000+00:00
+Formatted Date: 21 MAR 2025: 08 34
+Raw Date: 2025-03-21T08:39:51.000+00:00
+Formatted Date: 21 MAR 2025: 08 39
+2025-03-21 10:46:24,655 - 127.0.0.1 - - [21/Mar/2025 10:46:24] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:46:28,394 - 127.0.0.1 - - [21/Mar/2025 10:46:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-21 10:46:28,705 - 127.0.0.1 - - [21/Mar/2025 10:46:28] "GET / HTTP/1.1" 200 -
+2025-03-21 10:46:31,977 - 127.0.0.1 - - [21/Mar/2025 10:46:31] "GET /signup HTTP/1.1" 200 -
+2025-03-21 10:47:00,453 - 127.0.0.1 - - [21/Mar/2025 10:47:00] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2025-03-21 10:47:00,459 - 127.0.0.1 - - [21/Mar/2025 10:47:00] "GET /login HTTP/1.1" 200 -
+2025-03-21 10:47:09,064 - 127.0.0.1 - - [21/Mar/2025 10:47:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+
+Raw Expenses Received:
+[]
+2025-03-21 10:47:09,076 - 127.0.0.1 - - [21/Mar/2025 10:47:09] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:47:13,410 - 127.0.0.1 - - [21/Mar/2025 10:47:13] "GET /expense/add HTTP/1.1" 200 -
+2025-03-21 10:47:54,758 - 127.0.0.1 - - [21/Mar/2025 10:47:54] "[32mPOST /expense/add HTTP/1.1[0m" 302 -
+
+Raw Expenses Received:
+[{'id': 27, 'userId': 3, 'category': 'fun', 'amount': 200.0, 'description': 'morcovi', 'expenseDate': '2025-03-21T08:47:55.000+00:00'}]
+Raw Date: 2025-03-21T08:47:55.000+00:00
+Formatted Date: 21 MAR 2025: 08 47
+2025-03-21 10:47:55,050 - 127.0.0.1 - - [21/Mar/2025 10:47:55] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:49:24,382 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:49:24,427 -  * Restarting with stat
+2025-03-21 10:49:27,164 -  * Debugger is active!
+2025-03-21 10:49:27,167 -  * Debugger PIN: 806-635-475
+2025-03-21 10:49:37,292 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:49:37,407 -  * Restarting with stat
+2025-03-21 10:49:38,002 -  * Debugger is active!
+2025-03-21 10:49:38,005 -  * Debugger PIN: 806-635-475
+
+Raw Expenses Received:
+[{'id': 27, 'userId': 3, 'category': 'fun', 'amount': 200.0, 'description': 'morcovi', 'expenseDate': '2025-03-21T08:47:55.000+00:00'}]
+Raw Date (UTC): 2025-03-21T08:47:55.000+00:00
+Formatted Date (Local Time): 21 MAR 2025: 10 47
+2025-03-21 10:49:42,627 - 127.0.0.1 - - [21/Mar/2025 10:49:42] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 10:50:29,533 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:50:29,570 -  * Restarting with stat
+2025-03-21 10:50:30,156 -  * Debugger is active!
+2025-03-21 10:50:30,159 -  * Debugger PIN: 806-635-475
+2025-03-21 10:51:28,767 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:51:28,811 -  * Restarting with stat
+2025-03-21 10:51:29,383 -  * Debugger is active!
+2025-03-21 10:51:29,386 -  * Debugger PIN: 806-635-475
+2025-03-21 10:51:38,489 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:51:38,536 -  * Restarting with stat
+2025-03-21 10:51:39,109 -  * Debugger is active!
+2025-03-21 10:51:39,113 -  * Debugger PIN: 806-635-475
+2025-03-21 10:51:50,238 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:51:50,278 -  * Restarting with stat
+2025-03-21 10:51:50,837 -  * Debugger is active!
+2025-03-21 10:51:50,840 -  * Debugger PIN: 806-635-475
+2025-03-21 10:51:58,931 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:51:58,969 -  * Restarting with stat
+2025-03-21 10:51:59,576 -  * Debugger is active!
+2025-03-21 10:51:59,580 -  * Debugger PIN: 806-635-475
+2025-03-21 10:52:21,808 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:52:21,867 -  * Restarting with stat
+2025-03-21 10:52:22,431 -  * Debugger is active!
+2025-03-21 10:52:22,434 -  * Debugger PIN: 806-635-475
+2025-03-21 10:53:35,235 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:53:35,287 -  * Restarting with stat
+2025-03-21 10:53:35,849 -  * Debugger is active!
+2025-03-21 10:53:35,852 -  * Debugger PIN: 806-635-475
+2025-03-21 10:53:57,067 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:53:57,108 -  * Restarting with stat
+2025-03-21 10:53:57,668 -  * Debugger is active!
+2025-03-21 10:53:57,671 -  * Debugger PIN: 806-635-475
+2025-03-21 10:54:09,797 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:54:09,838 -  * Restarting with stat
+2025-03-21 10:54:10,400 -  * Debugger is active!
+2025-03-21 10:54:10,403 -  * Debugger PIN: 806-635-475
+2025-03-21 10:54:28,600 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:54:28,640 -  * Restarting with stat
+2025-03-21 10:54:29,286 -  * Debugger is active!
+2025-03-21 10:54:29,290 -  * Debugger PIN: 806-635-475
+2025-03-21 10:54:39,408 -  * Detected change in 'D:\\an3\\SEM2\\SD\\LAB4\\Tema\\fastApiProject\\main.py', reloading
+2025-03-21 10:54:39,472 -  * Restarting with stat
+2025-03-21 10:54:40,090 -  * Debugger is active!
+2025-03-21 10:54:40,093 -  * Debugger PIN: 806-635-475
+2025-03-21 11:00:57,316 - 127.0.0.1 - - [21/Mar/2025 11:00:57] "GET / HTTP/1.1" 200 -
+2025-03-21 11:00:58,155 - 127.0.0.1 - - [21/Mar/2025 11:00:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-21 11:01:00,260 - 127.0.0.1 - - [21/Mar/2025 11:01:00] "[32mGET /expense/add HTTP/1.1[0m" 302 -
+2025-03-21 11:01:00,356 - 127.0.0.1 - - [21/Mar/2025 11:01:00] "GET /login HTTP/1.1" 200 -
+2025-03-21 11:01:06,649 - 127.0.0.1 - - [21/Mar/2025 11:01:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+
+Date in format raw:
+[{'id': 12, 'userId': 2, 'category': 'food', 'amount': 2.0, 'description': '3', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 13, 'userId': 2, 'category': 'food', 'amount': 2.0, 'description': '2', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 14, 'userId': 2, 'category': 'food', 'amount': 4.0, 'description': '2', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}, {'id': 15, 'userId': 2, 'category': 'fun', 'amount': 1.0, 'description': 'test', 'expenseDate': '2025-03-20T22:00:00.000+00:00'}]
+Data in format raw: 2025-03-20T22:00:00.000+00:00
+Data formatata: 21 MAR 2025: 00 00
+Data in format raw: 2025-03-20T22:00:00.000+00:00
+Data formatata: 21 MAR 2025: 00 00
+Data in format raw: 2025-03-20T22:00:00.000+00:00
+Data formatata: 21 MAR 2025: 00 00
+Data in format raw: 2025-03-20T22:00:00.000+00:00
+Data formatata: 21 MAR 2025: 00 00
+2025-03-21 11:01:06,948 - 127.0.0.1 - - [21/Mar/2025 11:01:06] "GET /dashboard HTTP/1.1" 200 -
+2025-03-21 11:01:10,139 - 127.0.0.1 - - [21/Mar/2025 11:01:10] "GET /login HTTP/1.1" 200 -
+2025-03-21 11:01:16,613 - 127.0.0.1 - - [21/Mar/2025 11:01:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+
+Date in format raw:
+[{'id': 27, 'userId': 3, 'category': 'fun', 'amount': 200.0, 'description': 'morcovi', 'expenseDate': '2025-03-21T08:47:55.000+00:00'}]
+Data in format raw: 2025-03-21T08:47:55.000+00:00
+Data formatata: 21 MAR 2025: 10 47
+2025-03-21 11:01:16,907 - 127.0.0.1 - - [21/Mar/2025 11:01:16] "GET /dashboard HTTP/1.1" 200 -

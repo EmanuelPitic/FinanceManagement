@@ -1,19 +1,23 @@
 # app.py
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 import requests
 import os
 from functools import wraps
-
+import logging
+logging.basicConfig(filename="expense_log.txt", level=logging.INFO, format="%(asctime)s - %(message)s")
+from datetime import datetime
+import pytz
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a real secret key in production
+app.secret_key = 'parola'
 
-# Service URLs
+
 AUTH_SERVICE_URL = 'http://localhost:8081/auth'
 EXPENSE_SERVICE_URL = 'http://localhost:8083/expenses'
 ENCRYPTION_SERVICE_URL = 'http://localhost:8082/encryption'
 
 
-# Middleware to check if user is logged in
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -25,7 +29,8 @@ def login_required(f):
     return decorated_function
 
 
-# Decrypt user data helper function
+#folosim functia de decrpyt ca sa afisam data
+
 def decrypt_data(encrypted_data):
     response = requests.post(
         f"{ENCRYPTION_SERVICE_URL}/decrypt",
@@ -36,7 +41,7 @@ def decrypt_data(encrypted_data):
     return None
 
 
-# Routes
+# pentru index
 @app.route('/')
 def index():
     if 'user_id' in session:
@@ -44,6 +49,7 @@ def index():
     return render_template('index.html')
 
 
+#pagina de signul
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -75,6 +81,7 @@ def signup():
     return render_template('signup.html')
 
 
+#pagina de login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -114,23 +121,50 @@ def login():
     return render_template('login.html')
 
 
+#logout
 @app.route('/logout')
 def logout():
     session.clear()
     flash('Te-ai deconectat', 'info')
     return redirect(url_for('index'))
 
+# am facut debug pentru ora, nu o afisa bine
+logging.basicConfig(filename="expense_log.txt", level=logging.INFO, format="%(asctime)s - %(message)s")
+
+
+#solutie gasita pe interneet pentru a repara ora
+LOCAL_TZ = pytz.timezone('Europe/Bucharest')
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
     try:
-        # Get expenses for current user
         response = requests.get(f"{EXPENSE_SERVICE_URL}/user/{session['user_id']}")
         data = response.json()
 
         if data['success']:
             expenses = data['data']
+
+            with open("expense_log.txt", "a") as log_file:
+                log_file.write(f"\nDate in format raw:\n{expenses}\n")
+
+                for expense in expenses:
+                    if 'expenseDate' in expense:
+                        log_file.write(f"Data in format raw: {expense['expenseDate']}\n")
+                        #crapa aici pentru ca nu aveam formatarea buna
+                        #am cautat pe internet cum se repara si am gasit asta
+                        if expense['expenseDate']:
+                            try:
+                                dt_utc = datetime.fromisoformat(expense['expenseDate'].replace("Z", "+00:00"))
+
+                                dt_local = dt_utc.astimezone(LOCAL_TZ)
+
+                                formatted_date = dt_local.strftime("%d %b %Y: %H %M").upper()
+                                expense['expenseDate'] = formatted_date
+
+                                log_file.write(f"Data formatata: {formatted_date}\n")
+                            except ValueError as e:
+                                log_file.write(f"Eroare la data: {e}\n")
 
             return render_template('dashboard.html',
                                    first_name=session.get('first_name', ''),
@@ -139,10 +173,13 @@ def dashboard():
             flash(f'Error retrieving expenses: {data["message"]}', 'danger')
             return render_template('dashboard.html', expenses=[])
     except Exception as e:
+        with open("expense_log.txt", "a") as log_file:
+            log_file.write(f"Error: {str(e)}\n")
         flash(f'Error: {str(e)}', 'danger')
         return render_template('dashboard.html', expenses=[])
 
 
+#adaugare de cheltuiala
 @app.route('/expense/add', methods=['GET', 'POST'])
 @login_required
 def add_expense():
@@ -151,9 +188,10 @@ def add_expense():
             amount = float(request.form['amount'])
             description = request.form.get('description', '')
             category = request.form['category']
-            
+
             from datetime import datetime
-            expense_date = request.form.get('expense_date', datetime.now().strftime('%Y-%m-%d'))
+            expense_date = datetime.now().isoformat()
+            print (expense_date)
             print(f"Adding expense with date: {expense_date}")
             response = requests.post(
                 f"{EXPENSE_SERVICE_URL}",
@@ -178,6 +216,7 @@ def add_expense():
     return render_template('add_expense.html')
 
 
+#editarea de cheltuiala
 @app.route('/expense/edit/<int:expense_id>', methods=['GET', 'POST'])
 @login_required
 def edit_expense(expense_id):
@@ -205,7 +244,6 @@ def edit_expense(expense_id):
         except Exception as e:
             flash(f'Error: {str(e)}', 'danger')
 
-    # Get current expense details
     try:
         response = requests.get(f"{EXPENSE_SERVICE_URL}/{expense_id}")
         data = response.json()
@@ -221,6 +259,7 @@ def edit_expense(expense_id):
         return redirect(url_for('dashboard'))
 
 
+#stergere
 @app.route('/expense/delete/<int:expense_id>')
 @login_required
 def delete_expense(expense_id):

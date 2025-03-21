@@ -2,8 +2,13 @@ package org.example.expenseservice.Interfaces
 
 import org.example.expenseservice.Data.Expense
 import org.springframework.stereotype.Repository
+import java.sql.Date
 import java.sql.PreparedStatement
 import java.sql.ResultSet
+import java.sql.Timestamp
+import java.time.LocalDate
+import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import javax.sql.DataSource
 
 @Repository
@@ -13,18 +18,36 @@ class ExpenseRepositoryImpl(
 
     override fun save(expense: Expense): Expense {
         val sql = """
-            INSERT INTO expenses (user_id, category, amount, description, expense_date)
-            VALUES (?, ?, ?, ?, ?)
-        """.trimIndent()
+        INSERT INTO expenses (user_id, category, amount, description, expense_date)
+        VALUES (?, ?, ?, ?, ?)
+    """.trimIndent()
         dataSource.connection.use { connection ->
             connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS).use { statement ->
                 // Ensure required fields are non-null; throw exception if null.
                 statement.setInt(1, expense.userId ?: throw IllegalArgumentException("userId is required"))
                 statement.setString(2, expense.category ?: throw IllegalArgumentException("category is required"))
                 statement.setDouble(3, expense.amount ?: throw IllegalArgumentException("amount is required"))
-                statement.setString(4, expense.description) // description is optional
-                // expenseDate must be non-null; converting to java.sql.Date
-                statement.setDate(5, java.sql.Date.valueOf(expense.expenseDate!!.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate()))
+                statement.setString(4, expense.description)
+
+                val todayUtc = LocalDate.now(ZoneOffset.UTC)
+
+                val sqlTimestamp = if (expense.expenseDate != null) {
+                    val expenseInstant = expense.expenseDate.toInstant()
+                    val expenseLocalDate = expenseInstant.atZone(ZoneOffset.UTC).toLocalDate()
+                    val todayUtc = LocalDate.now(ZoneOffset.UTC)
+
+                    if (expenseLocalDate.isEqual(todayUtc)) {
+                        Timestamp.from(OffsetDateTime.now(ZoneOffset.UTC).toInstant())
+                    } else {
+                        Timestamp.from(expenseInstant)
+                    }
+                } else {
+                    Timestamp.from(OffsetDateTime.now(ZoneOffset.UTC).toInstant())
+                }
+
+                statement.setTimestamp(5, sqlTimestamp)
+
+
 
                 val affectedRows = statement.executeUpdate()
                 if (affectedRows == 0) {
@@ -42,7 +65,6 @@ class ExpenseRepositoryImpl(
     }
 
     override fun update(expense: Expense): Expense {
-        // Ensure the expense id and expenseDate are non-null for update
         val expenseId = expense.id ?: throw IllegalArgumentException("Expense id is required for update")
         val sql = """
             UPDATE expenses
@@ -54,7 +76,7 @@ class ExpenseRepositoryImpl(
                 statement.setString(1, expense.category ?: throw IllegalArgumentException("category is required"))
                 statement.setDouble(2, expense.amount ?: throw IllegalArgumentException("amount is required"))
                 statement.setString(3, expense.description) // optional
-                statement.setDate(4, java.sql.Date.valueOf(expense.expenseDate!!.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate()))
+                statement.setTimestamp(4, Timestamp.from(expense.expenseDate!!.toInstant()))
                 statement.setInt(5, expenseId)
                 val affectedRows = statement.executeUpdate()
                 if (affectedRows == 0) {
@@ -114,9 +136,9 @@ class ExpenseRepositoryImpl(
             category = resultSet.getString("category"),
             amount = resultSet.getDouble("amount"),
             description = resultSet.getString("description"),
-            expenseDate = resultSet.getDate("expense_date")?.toLocalDate()?.let {
-                java.util.Date.from(it.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant())
-            }
+            expenseDate = resultSet.getTimestamp("expense_date")?.toInstant()?.let {
+                java.util.Date.from(it)            }
+
         )
     }
 }
