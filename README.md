@@ -1,13 +1,15 @@
 # FinanceManagement
 
-FinanceManagement is a comprehensive application designed to help users manage and track their financial expenses. The project is built using Kotlin, HTML, and Python, and utilizes various microservices for handling authentication, encryption, and expense management.
+FinanceManagement is a comprehensive application designed to help users manage and track their financial expenses. The project is built using Kotlin, HTML, and Python, and utilizes various services for handling authentication, encryption, and expense management.
+
+TODO("Implement the service to generate comperhansive reports of the spending habits of each individual")
 
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Microservices](#microservices)
+- [Services](#services)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -31,46 +33,32 @@ To set up the FinanceManagement application, follow these steps:
     ```
 
 2. Set up the required services:
-    - Ensure you have Docker and Docker Compose installed.
-    - Start the services using Docker Compose:
-      ```sh
-      docker-compose up
-      ```
 
-3. Run the backend services:
-    - Navigate to the `ExpenseService` directory and start the service:
-      ```sh
-      cd ExpenseService
-      ./gradlew bootRun
-      ```
-
-    - Navigate to the `AuthService` directory and start the service:
-      ```sh
-      cd AuthService
-      ./gradlew bootRun
-      ```
-
-    - Navigate to the `EncryptionService` directory and start the service:
-      ```sh
-      cd EncryptionService
-      ./gradlew bootRun
-      ```
-
-4. Run the frontend:
-    - Navigate to the `frontend` directory and start the application:
-      ```sh
-      cd frontend
-      npm install
-      npm start
-      ```
+            a. Open Docker:
+            
+            docker run --name expense-tracker-mysql -e MYSQL_ROOT_PASSWORD=rootpassword -e MYSQL_DATABASE=expense_tracker -e MYSQL_USER=expenseapp -e MYSQL_PASSWORD=password -p 3307:3306 -d mysql:8.0
+            Import schema.sql and run it in Docker.
+            
+            b. Open MySQL in Docker:
+            
+            docker exec -it expense-tracker-mysql mysql -u expenseapp -p expense_tracker
+            Enter password: password
+            
+            d. Start Encryption Service: In IntelJ using the maven config from pom.xml
+            
+            e. Start Authentication Service: In IntelJ using the maven config from pom.xml
+            
+            f. Start Expense Service: In IntelJ using the maven config from pom.xml
+            
+            g. Start Flask: python main.py
 
 ## Usage
 
 Once the application is set up, you can access the dashboard and manage your expenses via the web interface. You can sign up, log in, and start adding, editing, and deleting expenses.
 
-## Microservices
+## Services
 
-The FinanceManagement application is composed of the following microservices:
+The FinanceManagement application is composed of the following services:
 
 - **AuthService**: Handles user authentication and authorization.
 - **ExpenseService**: Manages expenses, including adding, updating, retrieving, and deleting expenses.
